@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Users, Mail, BarChart3, Database, Trash2, Send, ExternalLink, ShieldCheck, CheckCircle2, ChevronDown, ChevronUp, AlertTriangle } from "lucide-react";
+import { Users, Mail, ChartBar as BarChart3, Database, Trash2, Send, ExternalLink, ShieldCheck, CircleCheck as CheckCircle2, ChevronDown, ChevronUp, TriangleAlert as AlertTriangle } from "lucide-react";
 import { Lead, EmailCampaignItem } from "../types";
+import { BRAND } from "../config/brand";
 
 interface AdminPanelProps {
   leads: Lead[];
@@ -38,7 +39,7 @@ export default function AdminPanel({ leads, onRefresh, onClearLeads, onTriggerEm
             Validation Dashboard
           </span>
           <h3 className="text-xl font-display font-black text-slate-900 mt-2 flex items-center gap-2 uppercase tracking-tight">
-            Astrateq Campaign Operations Desk <ShieldCheck className="w-5 h-5 text-blue-600" />
+            {BRAND.name} Campaign Operations Desk <ShieldCheck className="w-5 h-5 text-blue-600" />
           </h3>
           <p className="text-xs text-slate-500 mt-1">
             Analyze pre-launch validation cohorts and verify automated follow-up sequences.

@@ -5,6 +5,8 @@ import { fileURLToPath } from "url";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import dotenv from "dotenv";
+import { BRAND } from "./src/config/brand";
+
 
 dotenv.config();
 
@@ -311,7 +313,7 @@ Ensure the response contains ONLY the valid JSON array. Do not wrap in markdown 
                <p>Welcome to <strong>Astrateq Gadgets</strong>. Your founding cohort spot in the <strong>${cohort}</strong> is officially reserved. Your vehicle readiness score scored at a strong <strong>${score}/100</strong>.</p>
                <p>In Southern Ontario's extreme summers, bumper-to-bumper commuter delays on the DVP or Highway 401 place heavy strain on battery voltages and ignition systems. Astrateq Gadgets operates as local-only, privacy-first intelligence overlays that monitor these diagnostic logs offline—with absolutely no data resale.</p>
                <p>We are finalizing hardware production queues in Toronto. No payment is required to validate your cohort spot today.</p>
-               <p>Drive Safer. Drive Smarter.<br><strong>The Astrateq Canada Team</strong></p>`,
+               <p>Drive Safer. Drive Smarter.<br><strong>The ${BRAND.name} Team</strong></p>`,
         delayDays: 0,
         status: "Sent",
         sentAt: new Date().toISOString(),

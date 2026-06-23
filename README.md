@@ -18,3 +18,11 @@ View your app in AI Studio: https://ai.studio/apps/89391439-f559-419b-9312-639a8
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## Brand Governance
+
+**Astrateq Gadgets branding must only be referenced from `/src/config/brand.ts`.**
+Any direct string usage of the brand name (e.g., `"Astrateq Gadgets"`, `"Astrateq Canada"`, `"ASTRATEQ CANADA"`) is considered invalid architecture.
+
+Import the `BRAND` object and use `BRAND.name`, `BRAND.tagline`, or `BRAND.fullLabel` everywhere.
+

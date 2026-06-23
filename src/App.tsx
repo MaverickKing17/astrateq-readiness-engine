@@ -7,6 +7,7 @@ import OutcomePromises from "./components/OutcomePromises";
 import AdminPanel from "./components/AdminPanel";
 import PersonalInbox from "./components/PersonalInbox";
 import { AssessmentResult, Lead, EmailCampaignItem } from "./types";
+import { BRAND } from "./config/brand";
 
 // Simple local score simulator (no backend required for result reveal)
 function simulateScore(
@@ -359,8 +360,8 @@ export default function App() {
         const { tier, name: cohortName } = getCohortFromScore(localScore);
         const mockCampaign: EmailCampaignItem[] = [
           {
-            subject: `[Astrateq Gadgets] Founding Cohort Reserved: Your ${vehicleYear} ${vehicleMake} Profile`,
-            body: `<p>Hello ${name || "Driver"},</p><p>Your spot in the <strong>${cohortName}</strong> is secured. Your readiness score: <strong>${scanResult.readinessScore}/100</strong>.</p><p>Drive Safer. Drive Smarter.<br><strong>Astrateq Canada</strong></p>`,
+            subject: `[${BRAND.name}] Founding Cohort Reserved: Your ${vehicleYear} ${vehicleMake} Profile`,
+            body: `<p>Hello ${name || "Driver"},</p><p>Your spot in the <strong>${cohortName}</strong> is secured. Your readiness score: <strong>${scanResult.readinessScore}/100</strong>.</p><p>Drive Safer. Drive Smarter.<br><strong>${BRAND.name}</strong></p>`,
             delayDays: 0, status: "Sent", sentAt: new Date().toISOString(),
           },
           {
@@ -501,7 +502,7 @@ export default function App() {
                   />
                   <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-xs px-3.5 py-1.5 rounded-lg border border-slate-200/80 flex items-center gap-2 shadow-xs">
                     <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
-                    <span className="text-[10px] font-mono text-slate-700 font-bold">Astrateq Readiness Validation</span>
+                    <span className="text-[10px] font-mono text-slate-700 font-bold">{BRAND.name} Readiness Validation</span>
                   </div>
                 </div>
               </div>
@@ -570,7 +571,7 @@ export default function App() {
                 <div className="text-center mb-8 border-b border-slate-150 pb-5">
                   <span className="text-xs font-mono font-bold text-[#0062ff] uppercase tracking-widest">60-Second Readiness Check</span>
                   <h3 className="text-2xl font-display font-bold text-slate-900 mt-1 uppercase tracking-tight">Check Your Vehicle & Driving Profile</h3>
-                  <p className="text-xs text-slate-500 mt-1">Answer a few quick questions to see how your vehicle and driving habits align with the Astrateq pre-launch validation program.</p>
+                  <p className="text-xs text-slate-500 mt-1">Answer a few quick questions to see how your vehicle and driving habits align with the {BRAND.name} pre-launch validation program.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -1021,7 +1022,7 @@ export default function App() {
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
             />
             <div>
-              <span className="text-sm font-display font-black uppercase tracking-widest text-slate-900">ASTRATEQ CANADA</span>
+              <span className="text-sm font-display font-black uppercase tracking-widest text-slate-900">{BRAND.name.toUpperCase()}</span>
               <p className="text-xs text-slate-500 max-w-sm mt-1">
                 Developing next-generation local-first vehicle intelligence and driver awareness tools in Ontario, Canada.
               </p>
@@ -1029,7 +1030,7 @@ export default function App() {
           </div>
 
           <div className="flex flex-wrap items-center gap-4 text-[10px] font-mono text-slate-400">
-            <span>© 2026 Astrateq Gadgets. Toronto, ON, Canada.</span>
+            <span>© 2026 {BRAND.name}. Toronto, ON, Canada.</span>
             <span>•</span>
             <span>Local-first diagnostic direction</span>
             <span>•</span>
