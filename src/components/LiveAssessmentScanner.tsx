@@ -72,34 +72,34 @@ export default function LiveAssessmentScanner({
   // Helper to get status color/text of each step during scan
   const getStepStatus = (index: number) => {
     if (activeStep > index || progress === 100) {
-      return { text: "Completed", color: "text-red-400 font-bold" };
+      return { text: "Completed", color: "text-[#38bdf8] font-bold" };
     }
     if (activeStep === index) {
-      return { text: "Active...", color: "text-red-400 animate-pulse font-semibold" };
+      return { text: "Active...", color: "text-blue-400 animate-pulse font-semibold" };
     }
     return { text: "Pending", color: "text-slate-500" };
   };
 
   return (
-    <div id="live-readiness-preview" className="w-full bg-[#111218] text-white rounded-2xl border border-white/10 p-6 md:p-8 mt-12 relative overflow-hidden shadow-2xl backdrop-blur-md">
+    <div id="live-readiness-preview" className="w-full bg-[#0a1128] text-white rounded-2xl border border-blue-900/40 p-6 md:p-8 mt-12 relative overflow-hidden shadow-2xl backdrop-blur-md">
       {/* Background ambient radial gradients */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-red-600/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-red-800/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-800/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-white/10 mb-6">
+      <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-blue-950 mb-6">
         <div>
-          <span className="text-xs font-mono tracking-widest text-red-500 uppercase">Active Scanner Terminal</span>
+          <span className="text-xs font-mono tracking-widest text-blue-400 uppercase font-bold">Active Scanner Terminal</span>
           <h2 className="text-2xl font-display font-black mt-1 text-white uppercase tracking-tight">Live Vehicle Intelligence Assessment</h2>
         </div>
-        <div className="mt-2 md:mt-0 bg-black/40 border border-white/10 px-3 py-1.5 rounded-full text-xs font-mono text-slate-400">
+        <div className="mt-2 md:mt-0 bg-black/40 border border-blue-950 px-3 py-1.5 rounded-full text-xs font-mono text-slate-300">
           Target: {vehicleYear} {vehicleMake} {vehicleModel || "OBD-II vehicle"}
         </div>
       </div>
 
       {!hasStartedScan ? (
         <div className="text-center py-10 max-w-xl mx-auto">
-          <div className="w-16 h-16 bg-red-950/40 border border-red-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-            <RefreshCw className="w-8 h-8 text-red-500 animate-spin-slow" />
+          <div className="w-16 h-16 bg-blue-950/40 border border-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <RefreshCw className="w-8 h-8 text-blue-400 animate-spin-slow" />
           </div>
           <h3 className="text-xl font-display font-bold text-white uppercase tracking-wider">Awaiting Diagnostics Trigger</h3>
           <p className="text-xs text-slate-400 mt-2 leading-relaxed">
@@ -107,7 +107,7 @@ export default function LiveAssessmentScanner({
           </p>
           <button
             onClick={startScan}
-            className="mt-6 inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-mono uppercase tracking-widest text-xs px-6 py-3 rounded-full transition-all shadow-lg hover:shadow-red-500/20 active:scale-98 cursor-pointer"
+            className="mt-6 inline-flex items-center gap-2 bg-[#0062ff] hover:bg-[#0052d4] text-white font-mono uppercase tracking-widest text-xs px-6 py-3 rounded-full transition-all shadow-lg hover:shadow-blue-500/20 active:scale-98 cursor-pointer"
           >
             Start Vehicle Readiness Analysis <ChevronRight className="w-4 h-4" />
           </button>
@@ -115,12 +115,12 @@ export default function LiveAssessmentScanner({
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column: Visual Radar Chassis Map */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center bg-black/20 rounded-2xl border border-white/5 p-6 relative h-[280px]">
+          <div className="lg:col-span-5 flex flex-col items-center justify-center bg-black/40 rounded-2xl border border-blue-950 p-6 relative h-[280px]">
             {/* Visual Scan Ping Rings */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className={`w-48 h-48 rounded-full border border-red-500/10 flex items-center justify-center transition-all ${isLoading ? 'animate-ping-slow' : ''}`}>
-                <div className="w-32 h-32 rounded-full border border-red-500/20 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-red-950/20 border border-red-500/30" />
+              <div className={`w-48 h-48 rounded-full border border-blue-500/10 flex items-center justify-center transition-all ${isLoading ? 'animate-ping-slow' : ''}`}>
+                <div className="w-32 h-32 rounded-full border border-blue-500/20 flex items-center justify-center">
+                   <div className="w-16 h-16 rounded-full bg-blue-950/20 border border-blue-500/30" />
                 </div>
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function LiveAssessmentScanner({
               <path
                 d="M35 15 C35 10, 65 10, 65 15 L70 30 L72 50 L70 70 L65 85 C65 90, 35 90, 35 85 L30 70 L28 50 L30 30 Z"
                 strokeWidth="1.5"
-                className={`${isLoading ? "stroke-red-500" : "stroke-red-500"} transition-all duration-500`}
+                className="stroke-blue-400 transition-all duration-500"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
@@ -147,7 +147,7 @@ export default function LiveAssessmentScanner({
               <rect x="70" y="66" width="6" height="12" rx="2" className="fill-slate-800 stroke-slate-700" />
               
               {/* Internal Signal Core */}
-              <circle cx="50" cy="50" r="4" className={`${isLoading ? "fill-red-500 animate-ping" : "fill-red-500"}`} />
+              <circle cx="50" cy="50" r="4" className={`${isLoading ? "fill-cyan-400 animate-ping" : "fill-blue-500"}`} />
               <line x1="50" y1="30" x2="50" y2="70" stroke="#1e293b" strokeWidth="1" strokeDasharray="2" />
               <line x1="35" y1="50" x2="65" y2="50" stroke="#1e293b" strokeWidth="1" strokeDasharray="2" />
 
@@ -158,7 +158,7 @@ export default function LiveAssessmentScanner({
                   y1={15 + (70 * (progress / 100))}
                   x2="80"
                   y2={15 + (70 * (progress / 100))}
-                  stroke="#ef4444"
+                  stroke="#00d2ff"
                   strokeWidth="2"
                   className="opacity-80"
                 />
@@ -169,7 +169,7 @@ export default function LiveAssessmentScanner({
               <span className="text-xs font-mono font-medium text-slate-400">
                 {isLoading ? "OBD-II Interface Handshaking..." : "Telemetry Analysis Locked"}
               </span>
-              <div className="text-lg font-display font-bold text-slate-100 mt-1">
+              <div className="text-lg font-display font-bold text-[#00d2ff] mt-1">
                 {isLoading ? `Analyzing: ${Math.floor(progress)}%` : "Ready"}
               </div>
             </div>
@@ -185,10 +185,10 @@ export default function LiveAssessmentScanner({
                     key={idx}
                     className={`p-3 rounded-xl border text-left transition-all ${
                       activeStep === idx && isLoading
-                        ? "bg-black border-red-500/40 shadow-xs"
+                        ? "bg-black/60 border-blue-500/40 shadow-xs"
                         : activeStep > idx || progress === 100
-                        ? "bg-black/40 border-red-500/20"
-                        : "bg-black/10 border-white/5"
+                        ? "bg-black/30 border-blue-900/30"
+                        : "bg-black/10 border-blue-950/20"
                     }`}
                   >
                     <div className="flex items-center justify-between">
@@ -211,13 +211,13 @@ export default function LiveAssessmentScanner({
 
             {/* Overall progress bar */}
             <div className="pt-2">
-              <div className="flex items-center justify-between text-xs font-mono text-slate-500 mb-1.5">
+              <div className="flex items-center justify-between text-xs font-mono text-slate-400 mb-1.5">
                 <span>Signal Evaluation Queue</span>
                 <span>{Math.floor(progress)}%</span>
               </div>
-              <div className="w-full bg-[#111218] h-2 rounded-full overflow-hidden border border-white/10">
+              <div className="w-full bg-black/60 h-2 rounded-full overflow-hidden border border-blue-950">
                 <div
-                  className="h-full bg-gradient-to-r from-red-600 to-red-400 transition-all duration-100"
+                  className="h-full bg-gradient-to-r from-blue-600 to-cyan-400 transition-all duration-100"
                   style={{ width: `${progress}%` }}
                 />
               </div>

@@ -31,29 +31,29 @@ export default function AdminPanel({ leads, onRefresh, onClearLeads, onTriggerEm
   };
 
   return (
-    <div id="admin-lead-campaign-panel" className="bg-[#111218] rounded-2xl border border-white/10 p-6 shadow-2xl mt-12 overflow-hidden text-white backdrop-blur-md">
-      <div className="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-white/10 mb-6 gap-4">
+    <div id="admin-lead-campaign-panel" className="bg-white rounded-2xl border border-slate-200/85 p-6 shadow-md mt-12 overflow-hidden text-slate-800 relative">
+      <div className="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-slate-200 mb-6 gap-4">
         <div>
-          <span className="text-[10px] font-mono bg-red-500/20 border border-red-500/30 text-red-400 px-2 py-0.5 rounded-md font-bold uppercase tracking-widest">
+          <span className="text-[10px] font-mono bg-blue-50 border border-blue-200 text-blue-700 px-2 py-0.5 rounded-md font-bold uppercase tracking-widest">
             Validation Dashboard
           </span>
-          <h3 className="text-xl font-display font-black text-white mt-2 flex items-center gap-2 uppercase tracking-tight">
-            Astrateq Campaign Operations Desk <ShieldCheck className="w-5 h-5 text-red-500" />
+          <h3 className="text-xl font-display font-black text-slate-900 mt-2 flex items-center gap-2 uppercase tracking-tight">
+            Astrateq Campaign Operations Desk <ShieldCheck className="w-5 h-5 text-blue-600" />
           </h3>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-500 mt-1">
             Analyze pre-launch validation cohorts and verify automated follow-up sequences.
           </p>
         </div>
         <div className="flex items-center gap-3 mt-4 md:mt-0">
           <button
             onClick={onRefresh}
-            className="text-xs bg-white/10 border border-white/10 text-white px-3.5 py-1.5 rounded-lg hover:bg-white/20 font-mono uppercase tracking-wider transition cursor-pointer"
+            className="text-xs bg-slate-100 border border-slate-200 text-slate-700 px-3.5 py-1.5 rounded-lg hover:bg-slate-200 font-mono uppercase tracking-wider transition cursor-pointer font-bold"
           >
             Refresh Database
           </button>
           <button
             onClick={onClearLeads}
-            className="text-xs bg-red-950/40 border border-red-500/30 text-red-400 px-3.5 py-1.5 rounded-lg hover:bg-red-900/30 font-mono uppercase tracking-wider transition flex items-center gap-1.5 cursor-pointer"
+            className="text-xs bg-red-50 border border-red-200 text-red-600 px-3.5 py-1.5 rounded-lg hover:bg-red-100 font-mono uppercase tracking-wider transition flex items-center gap-1.5 cursor-pointer font-bold"
           >
             <Trash2 className="w-3.5 h-3.5" /> Reset Database
           </button>
@@ -62,68 +62,68 @@ export default function AdminPanel({ leads, onRefresh, onClearLeads, onTriggerEm
 
       {/* Analytics Bento Grid */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-        <div className="bg-black/40 p-4 rounded-xl border border-white/10 flex items-center gap-3">
-          <div className="p-3 bg-red-950/40 border border-red-500/20 rounded-lg text-red-500">
+        <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 flex items-center gap-3 shadow-xs">
+          <div className="p-3 bg-blue-50 border border-blue-100 rounded-lg text-blue-600">
             <Users className="w-5 h-5" />
           </div>
           <div>
-            <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Subscribers</div>
-            <div className="text-2xl font-display font-black text-white">{totalLeads}</div>
+            <div className="text-[11px] font-mono text-slate-500 uppercase tracking-wider">Subscribers</div>
+            <div className="text-2xl font-display font-black text-slate-900">{totalLeads}</div>
           </div>
         </div>
 
-        <div className="bg-black/40 p-4 rounded-xl border border-white/10 flex items-center gap-3">
-          <div className="p-3 bg-red-950/40 border border-red-500/20 rounded-lg text-red-500">
+        <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 flex items-center gap-3 shadow-xs">
+          <div className="p-3 bg-blue-50 border border-blue-100 rounded-lg text-blue-600">
             <BarChart3 className="w-5 h-5" />
           </div>
           <div>
-            <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Avg Readiness</div>
-            <div className="text-2xl font-display font-black text-white">{avgScore}/100</div>
+            <div className="text-[11px] font-mono text-slate-500 uppercase tracking-wider">Avg Readiness</div>
+            <div className="text-2xl font-display font-black text-slate-900">{avgScore}/100</div>
           </div>
         </div>
 
-        <div className="bg-black/40 p-4 rounded-xl border border-white/10 flex items-center gap-3">
-          <div className="p-3 bg-red-950/40 border border-red-500/20 rounded-lg text-red-500">
+        <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 flex items-center gap-3 shadow-xs">
+          <div className="p-3 bg-blue-50 border border-blue-100 rounded-lg text-blue-600">
             <Mail className="w-5 h-5" />
           </div>
           <div>
-            <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Simulated Dispatches</div>
-            <div className="text-2xl font-display font-black text-white">{totalEmailsSent} <span className="text-[11px] text-slate-500 font-normal">sent</span></div>
+            <div className="text-[11px] font-mono text-slate-500 uppercase tracking-wider">Simulated Dispatches</div>
+            <div className="text-2xl font-display font-black text-slate-900">{totalEmailsSent} <span className="text-[11px] text-slate-500 font-normal">sent</span></div>
           </div>
         </div>
 
-        <div className="bg-black/40 p-4 rounded-xl border border-white/10 flex flex-col justify-center">
-          <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1 text-center">Cohort Segmentation</div>
+        <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 flex flex-col justify-center shadow-xs">
+          <div className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-1 text-center">Cohort Segmentation</div>
           <div className="flex items-center justify-around text-xs font-semibold">
-            <span className="flex items-center gap-1 text-red-400">
-              <span className="w-2 h-2 rounded-full bg-red-500" /> High: {highCohort}
+            <span className="flex items-center gap-1 text-emerald-600">
+              <span className="w-2 h-2 rounded-full bg-emerald-500" /> High: {highCohort}
             </span>
-            <span className="flex items-center gap-1 text-orange-400">
-              <span className="w-2 h-2 rounded-full bg-orange-500" /> Mod: {moderateCohort}
+            <span className="flex items-center gap-1 text-amber-600">
+              <span className="w-2 h-2 rounded-full bg-amber-500" /> Mod: {moderateCohort}
             </span>
-            <span className="flex items-center gap-1 text-slate-400">
-              <span className="w-2 h-2 rounded-full bg-slate-400" /> Low: {lowCohort}
+            <span className="flex items-center gap-1 text-blue-600">
+              <span className="w-2 h-2 rounded-full bg-blue-500" /> Low: {lowCohort}
             </span>
           </div>
         </div>
       </div>
 
       {totalLeads === 0 ? (
-        <div className="text-center py-10 bg-black/20 rounded-xl border border-dashed border-white/10">
-          <Users className="w-10 h-10 text-slate-600 mx-auto mb-3" />
-          <h4 className="text-sm font-semibold text-slate-300">No Pre-Launch Subscribers Yet</h4>
+        <div className="text-center py-10 bg-slate-50 rounded-xl border border-dashed border-slate-300">
+          <Users className="w-10 h-10 text-slate-400 mx-auto mb-3" />
+          <h4 className="text-sm font-semibold text-slate-700">No Pre-Launch Subscribers Yet</h4>
           <p className="text-xs text-slate-500 max-w-sm mx-auto mt-1">
             Complete the vehicle configurator and secure a founding driver allocation to populate this subscriber database.
           </p>
         </div>
       ) : (
-        <div className="border border-white/10 rounded-xl overflow-hidden bg-black/20">
+        <div className="border border-slate-200 rounded-xl overflow-hidden bg-[#f8fafc]">
           {/* Tabs */}
-          <div className="flex border-b border-white/10 bg-black/40">
+          <div className="flex border-b border-slate-200 bg-slate-50">
             <button
               onClick={() => setActiveTab("leads")}
               className={`px-4 py-2.5 text-xs font-semibold transition cursor-pointer ${
-                activeTab === "leads" ? "bg-black border-r border-white/10 text-red-400 font-bold" : "text-slate-400 hover:text-white"
+                activeTab === "leads" ? "bg-white border-r border-slate-200 text-blue-600 font-bold" : "text-slate-500 hover:text-slate-900"
               }`}
             >
               Captured Lead Database ({leads.length})
@@ -131,7 +131,7 @@ export default function AdminPanel({ leads, onRefresh, onClearLeads, onTriggerEm
             <button
               onClick={() => setActiveTab("campaigns")}
               className={`px-4 py-2.5 text-xs font-semibold transition cursor-pointer ${
-                activeTab === "campaigns" ? "bg-black border-r border-white/10 text-red-400 font-bold" : "text-slate-400 hover:text-white"
+                activeTab === "campaigns" ? "bg-white border-r border-slate-200 text-blue-600 font-bold" : "text-slate-500 hover:text-slate-900"
               }`}
             >
               Automated Follow-Up Campaign Monitoring
@@ -142,7 +142,7 @@ export default function AdminPanel({ leads, onRefresh, onClearLeads, onTriggerEm
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-black/60 border-b border-white/10 text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+                  <tr className="bg-slate-100/80 border-b border-slate-200 text-[10px] font-mono text-slate-500 uppercase tracking-wider">
                     <th className="p-3 pl-4">Subscriber Info</th>
                     <th className="p-3">Vehicle</th>
                     <th className="p-3 text-center">Score</th>
@@ -151,7 +151,7 @@ export default function AdminPanel({ leads, onRefresh, onClearLeads, onTriggerEm
                     <th className="p-3 text-right pr-4">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/5">
+                <tbody className="divide-y divide-slate-150">
                   {leads.map((lead) => {
                     const isExpanded = expandedLead === lead.email;
                     const sentCount = lead.followUpCampaign?.filter(e => e.status === "Sent").length || 0;
@@ -160,47 +160,47 @@ export default function AdminPanel({ leads, onRefresh, onClearLeads, onTriggerEm
                     return (
                       <g key={lead.email}>
                         <tr
-                          className="hover:bg-white/5 text-xs text-slate-300 transition-colors"
+                          className="hover:bg-slate-50/80 text-xs text-slate-700 transition-colors"
                         >
                           <td className="p-3 pl-4">
-                            <div className="font-bold text-white">{lead.name}</div>
-                            <div className="text-[10px] text-red-400 font-mono">{lead.email}</div>
+                            <div className="font-bold text-slate-900">{lead.name}</div>
+                            <div className="text-[10px] text-blue-600 font-mono">{lead.email}</div>
                           </td>
                           <td className="p-3">
-                            <span className="font-bold text-slate-200">{lead.vehicleYear} {lead.vehicleMake}</span>
+                            <span className="font-bold text-slate-800">{lead.vehicleYear} {lead.vehicleMake}</span>
                             <span className="text-slate-500 font-mono block text-[10px]">{lead.vehicleModel}</span>
                           </td>
                           <td className="p-3 text-center">
                             <span className={`inline-block w-8 py-0.5 text-center font-mono font-bold rounded-md ${
-                              lead.readinessScore >= 80 ? "bg-red-500/20 text-red-400 border border-red-500/30" :
-                              lead.readinessScore >= 60 ? "bg-orange-500/20 text-orange-400 border border-orange-500/30" :
-                              "bg-white/10 text-slate-400 border border-white/10"
+                              lead.readinessScore >= 80 ? "bg-emerald-50 text-emerald-700 border border-emerald-200" :
+                              lead.readinessScore >= 60 ? "bg-amber-50 text-amber-700 border border-amber-200" :
+                              "bg-blue-50 text-blue-700 border border-blue-200"
                             }`}>
                               {lead.readinessScore}
                             </span>
                           </td>
                           <td className="p-3">
                             <span className={`inline-flex items-center gap-1 font-semibold ${
-                              lead.cohortTier === "High Readiness" ? "text-red-400" :
-                              lead.cohortTier === "Moderate Readiness" ? "text-orange-400" :
-                              "text-slate-400"
+                              lead.cohortTier === "High Readiness" ? "text-emerald-600" :
+                              lead.cohortTier === "Moderate Readiness" ? "text-amber-600" :
+                              "text-blue-600"
                             }`}>
                               <span className={`w-1.5 h-1.5 rounded-full ${
-                                lead.cohortTier === "High Readiness" ? "bg-red-500" :
-                                lead.cohortTier === "Moderate Readiness" ? "bg-orange-500" :
-                                "bg-slate-400"
+                                lead.cohortTier === "High Readiness" ? "bg-emerald-500" :
+                                lead.cohortTier === "Moderate Readiness" ? "bg-amber-500" :
+                                "bg-blue-500"
                               }`} />
                               {lead.cohortName}
                             </span>
                           </td>
                           <td className="p-3 font-mono text-[10px]">
-                            <div className="flex items-center gap-1.5 text-slate-400">
-                              <span className="font-bold text-white">{sentCount}/{totalCount}</span>
+                            <div className="flex items-center gap-1.5 text-slate-500">
+                              <span className="font-bold text-slate-800">{sentCount}/{totalCount}</span>
                               <span>Dispatched</span>
                             </div>
-                            <div className="w-16 bg-black h-1 rounded-full overflow-hidden mt-1 border border-white/5">
+                            <div className="w-16 bg-slate-200 h-1 rounded-full overflow-hidden mt-1 border border-slate-300/30">
                               <div
-                                className="bg-red-500 h-full"
+                                className="bg-blue-600 h-full"
                                 style={{ width: `${(sentCount / totalCount) * 100}%` }}
                               />
                             </div>
@@ -208,7 +208,7 @@ export default function AdminPanel({ leads, onRefresh, onClearLeads, onTriggerEm
                           <td className="p-3 text-right pr-4">
                             <button
                               onClick={() => toggleLead(lead.email)}
-                              className="text-xs bg-white/10 border border-white/10 hover:bg-red-600 hover:text-white text-slate-300 px-2.5 py-1 rounded-md font-mono uppercase tracking-wider transition inline-flex items-center gap-1 cursor-pointer"
+                              className="text-xs bg-slate-100 border border-slate-200 hover:bg-blue-50 hover:text-blue-600 text-slate-700 px-2.5 py-1 rounded-md font-mono uppercase tracking-wider transition inline-flex items-center gap-1 cursor-pointer font-bold"
                             >
                               {isExpanded ? "Close" : "Inspect"}
                               {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
@@ -218,10 +218,10 @@ export default function AdminPanel({ leads, onRefresh, onClearLeads, onTriggerEm
 
                         {/* Expanded details row */}
                         {isExpanded && (
-                          <tr className="bg-black/40">
+                          <tr className="bg-slate-50">
                             <td colSpan={6} className="p-4 pl-6 pr-6">
-                              <div className="bg-[#111218] rounded-xl border border-white/10 p-4 shadow-2xl">
-                                <h5 className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest mb-3">
+                              <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+                                <h5 className="text-[11px] font-mono font-bold text-slate-500 uppercase tracking-widest mb-3">
                                   Generated follow-up email funnel (Personalized via Gemini)
                                 </h5>
                                 
@@ -229,29 +229,29 @@ export default function AdminPanel({ leads, onRefresh, onClearLeads, onTriggerEm
                                   {lead.followUpCampaign?.map((emailItem, index) => (
                                     <div
                                       key={index}
-                                      className="border border-white/5 rounded-lg p-3 bg-black/40"
+                                      className="border border-slate-150 rounded-lg p-3 bg-[#f8fafc]"
                                     >
-                                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-2 mb-2">
+                                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-2 mb-2">
                                         <div className="flex items-center gap-2">
-                                          <span className="text-[10px] font-mono bg-red-500/20 border border-red-500/30 text-red-400 px-2 py-0.5 rounded-full font-bold">
+                                          <span className="text-[10px] font-mono bg-blue-50 border border-blue-200 text-blue-700 px-2 py-0.5 rounded-full font-bold">
                                             Stage {index + 1} (Day {emailItem.delayDays})
                                           </span>
-                                          <span className="text-xs font-semibold text-white">
+                                          <span className="text-xs font-semibold text-slate-800">
                                             {emailItem.subject}
                                           </span>
                                         </div>
                                         <div className="flex items-center gap-3">
                                           <span className={`text-[10px] font-mono uppercase px-2 py-0.5 rounded-full border ${
                                             emailItem.status === "Sent"
-                                              ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/30"
-                                              : "bg-amber-500/20 text-amber-400 border-amber-500/30 animate-pulse"
+                                              ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                                              : "bg-amber-50 text-amber-700 border-amber-200 animate-pulse"
                                           }`}>
                                             {emailItem.status}
                                           </span>
                                           {emailItem.status === "Scheduled" && (
                                             <button
                                               onClick={() => onTriggerEmail(lead.email, index)}
-                                              className="bg-red-600 hover:bg-red-500 text-white font-mono uppercase tracking-wider text-[10px] px-2 py-1 rounded-md transition flex items-center gap-1 cursor-pointer"
+                                              className="bg-[#0062ff] hover:bg-[#0052d4] text-white font-mono uppercase tracking-wider text-[10px] px-2 py-1 rounded-md transition flex items-center gap-1 cursor-pointer font-bold"
                                             >
                                               <Send className="w-3 h-3" /> Send Mock Email
                                             </button>
@@ -260,7 +260,7 @@ export default function AdminPanel({ leads, onRefresh, onClearLeads, onTriggerEm
                                       </div>
                                       
                                       <div
-                                        className="text-[11px] text-slate-300 font-mono overflow-y-auto max-h-36 bg-black p-2.5 rounded-md border border-white/5"
+                                        className="text-[11px] text-slate-600 font-mono overflow-y-auto max-h-36 bg-white p-2.5 rounded-md border border-slate-200"
                                         dangerouslySetInnerHTML={{ __html: emailItem.body }}
                                       />
                                     </div>
@@ -278,39 +278,39 @@ export default function AdminPanel({ leads, onRefresh, onClearLeads, onTriggerEm
             </div>
           ) : (
             <div className="p-5 space-y-4">
-              <div className="bg-black/40 p-4 rounded-xl border border-white/10">
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider">Pre-Launch Progression Psychology and Conversion Funnel</h4>
-                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+              <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+                <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider">Pre-Launch Progression Psychology and Conversion Funnel</h4>
+                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                   Our system operates on structured psychological escalation, taking the user on a continuous momentum path:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
-                  <div className="bg-[#111218] p-3 rounded-lg border border-white/10">
-                    <span className="text-xs font-bold text-red-400 block">1. Anonymous Visitor</span>
-                    <span className="text-[11px] text-slate-400 leading-relaxed block mt-1">
+                  <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                    <span className="text-xs font-bold text-blue-600 block font-display">1. Anonymous Visitor</span>
+                    <span className="text-[11px] text-slate-600 leading-relaxed block mt-1">
                       Attracted by premium Apple-level UI and the instant promise of three core outputs.
                     </span>
                   </div>
-                  <div className="bg-[#111218] p-3 rounded-lg border border-white/10">
-                    <span className="text-xs font-bold text-red-400 block">2. Classified Participant</span>
-                    <span className="text-[11px] text-slate-400 leading-relaxed block mt-1">
+                  <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                    <span className="text-xs font-bold text-blue-600 block font-display">2. Classified Participant</span>
+                    <span className="text-[11px] text-slate-600 leading-relaxed block mt-1">
                       Engages in assessment. Receives exact scores and regional summer risk profiles.
                     </span>
                   </div>
-                  <div className="bg-[#111218] p-3 rounded-lg border border-white/10">
-                    <span className="text-xs font-bold text-red-400 block">3. Cohort Candidate</span>
-                    <span className="text-[11px] text-slate-400 leading-relaxed block mt-1">
+                  <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                    <span className="text-xs font-bold text-blue-600 block font-display">3. Cohort Candidate</span>
+                    <span className="text-[11px] text-slate-600 leading-relaxed block mt-1">
                       Converts by securing zero-payment reservations. Enters the automated campaign funnel.
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-black/40 p-4 rounded-xl border border-white/10">
+              <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
                 <div className="flex items-center gap-2 mb-2">
-                  <AlertTriangle className="w-4 h-4 text-red-500" />
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wider">Automated Follow-Up Sequences Info</h4>
+                  <AlertTriangle className="w-4 h-4 text-amber-500" />
+                  <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider">Automated Follow-Up Sequences Info</h4>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   When a driver completes their founding cohort application, our Express backend generates three highly tailored follow-up campaigns. The first email, a **Welcome and vehicle-specific risk report**, is dispatched instantly. The subsequent emails are scheduled for **Day 2 (Telemetry and privacy deep dive)** and **Day 5 (Priority launch activation)**. 
                 </p>
                 <p className="text-xs text-slate-500 mt-2">

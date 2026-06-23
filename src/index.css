@@ -6,17 +6,17 @@
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  /* Vibrant Palette: Deep obsidian dark, white/silver text, and premium energetic red accents */
-  --color-brand-dark: #0A0B10;
-  --color-brand-navy: #111218;
-  --color-brand-blue: #dc2626;
-  --color-brand-cyan: #ef4444;
-  --color-brand-light: #1c1d26;
+  /* Vibrant Light/Navy Palette from the mockup */
+  --color-brand-dark: #0f172a;
+  --color-brand-navy: #1e293b;
+  --color-brand-blue: #0062ff;
+  --color-brand-cyan: #0284c7;
+  --color-brand-light: #f8fafc;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #0A0B10;
-  color: #ffffff;
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
