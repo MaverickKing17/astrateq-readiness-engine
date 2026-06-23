@@ -4,24 +4,21 @@ export default function OutcomePromises() {
   const outcomes = [
     {
       icon: <Gauge className="w-8 h-8 text-[#0062ff]" />,
-      metric: "85",
       label: "Vehicle Readiness Score",
-      range: "0-100 Gauge",
-      desc: "A real-time structural score based on your vehicle model's electronic signal compatibility with edge intelligence."
+      range: "Instant preview",
+      desc: "A quick score based on your vehicle profile and driving conditions."
     },
     {
       icon: <Flame className="w-8 h-8 text-[#0062ff]" />,
-      metric: "GTA Profile",
       label: "Summer Driving Risk Profile",
-      range: "Thermal & Congestion",
-      desc: "Understand how Southern Ontario heatwaves and Highway 401 bumper-to-bumper delays strain your vehicle core."
+      range: "Shown after completion",
+      desc: "Understand how heat, traffic, and highway usage may affect your driving context."
     },
     {
       icon: <Award className="w-8 h-8 text-[#0062ff]" />,
-      metric: "Cohort Eligibility",
       label: "Founding Cohort Classification",
-      range: "Instant Tiering",
-      desc: "Receive instant verification for Founding Member access, securing priority diagnostic hardware allocations."
+      range: "Instant preview",
+      desc: "See whether your profile may qualify for early access consideration."
     }
   ];
 
@@ -29,12 +26,12 @@ export default function OutcomePromises() {
     <div id="outcome-promises" className="w-full mt-10">
       <div className="text-center mb-6">
         <h4 className="text-xs font-mono font-semibold tracking-widest text-slate-500 uppercase">
-          Pre-Launch Verification Metrics
+          Pre-Launch Verification
         </h4>
         <h3 className="text-xl font-display font-black text-slate-900 mt-1 uppercase tracking-tight">
           What you will receive in 60 seconds
         </h3>
-        <p className="text-xs text-slate-500 mt-1">This initial pre-launch assessment maps your hardware footprint and safety index.</p>
+        <p className="text-xs text-slate-500 mt-1">Complete the readiness check and get your results right away.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -43,7 +40,6 @@ export default function OutcomePromises() {
             key={idx}
             className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-md hover:shadow-xl hover:border-[#0062ff]/30 transition-all duration-300 relative overflow-hidden flex flex-col justify-between"
           >
-            {/* Top row with icon & metric badge */}
             <div className="flex items-start justify-between mb-4">
               <div className="p-3 bg-blue-50 rounded-xl border border-blue-100">
                 {item.icon}
@@ -53,7 +49,6 @@ export default function OutcomePromises() {
               </span>
             </div>
 
-            {/* Middle body */}
             <div>
               <h4 className="text-lg font-display font-bold text-slate-900 leading-snug">
                 {item.label}
@@ -63,10 +58,9 @@ export default function OutcomePromises() {
               </p>
             </div>
 
-            {/* Subtle bottom detail */}
             <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
-              <span className="text-[11px] font-mono text-[#0062ff] font-bold uppercase tracking-wider">Instant Delivery</span>
-              <span className="text-[10px] text-slate-500">Zero Obligation</span>
+              <span className="text-[11px] font-mono text-[#0062ff] font-bold uppercase tracking-wider">No obligation</span>
+              <span className="text-[10px] text-slate-500">Zero payment required</span>
             </div>
           </div>
         ))}
