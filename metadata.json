@@ -1,0 +1,6 @@
+{
+  "name": "Astrateq Gadgets",
+  "description": "A high-conversion pre-launch market validation system for Astrateq Gadgets Canadian vehicle intelligence, featuring a personalized configurator, staged scanners, and automated follow-up sequences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
