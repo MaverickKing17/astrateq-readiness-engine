@@ -265,6 +265,14 @@ export default function App() {
     formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  const handleBackHome = () => {
+    setStep("configurator");
+    setScanResult(null);
+    setPersonalLead(null);
+    setFormErrors({});
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   // Main form submit — shows 3-stage reveal, then optionally full assessment
   const handleStartAnalysis = async () => {
     const errors: { email?: string; model?: string } = {};
@@ -504,8 +512,21 @@ export default function App() {
         {/* Outcome Promises */}
         {step === "configurator" && <OutcomePromises />}
 
+        {/* Back to Readiness Home — shown on all post-form steps */}
+        {step !== "configurator" && (
+          <div className="max-w-4xl mx-auto mb-4 mt-2">
+            <button
+              onClick={handleBackHome}
+              className="inline-flex items-center gap-1.5 text-[11px] font-mono font-semibold text-slate-700 bg-white border border-slate-200 hover:border-blue-300 hover:text-[#0062ff] hover:shadow-sm px-3.5 py-2 rounded-full transition-all cursor-pointer"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              Back to Readiness Home
+            </button>
+          </div>
+        )}
+
         {/* Main Funnel Content */}
-        <div className="max-w-4xl mx-auto mt-12" ref={formRef} id="configurator-form-anchor">
+        <div className="max-w-4xl mx-auto mt-4" ref={formRef} id="configurator-form-anchor">
           <AnimatePresence mode="wait">
 
             {/* Step 1: Form */}
@@ -955,14 +976,19 @@ export default function App() {
 
       <footer className="bg-white text-slate-700 mt-20 border-t border-slate-200 py-12 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <Car className="w-5 h-5 text-blue-600" />
+          <div className="space-y-3">
+            <img
+              src="https://i.ibb.co/GQw0m4mg/Astrateq.png"
+              alt="Astrateq Gadgets logo"
+              className="h-auto w-28 object-contain"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            />
+            <div>
               <span className="text-sm font-display font-black uppercase tracking-widest text-slate-900">ASTRATEQ CANADA</span>
+              <p className="text-xs text-slate-500 max-w-sm mt-1">
+                Developing next-generation local-first vehicle intelligence and driver awareness tools in Ontario, Canada.
+              </p>
             </div>
-            <p className="text-xs text-slate-500 max-w-sm">
-              Developing next-generation local-first vehicle intelligence and driver awareness tools in Ontario, Canada.
-            </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-4 text-[10px] font-mono text-slate-400">
