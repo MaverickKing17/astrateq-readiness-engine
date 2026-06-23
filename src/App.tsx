@@ -536,20 +536,52 @@ export default function App() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
-                className="bg-white border border-slate-200/80 rounded-2xl p-6 md:p-8 shadow-md"
+                className="bg-white border border-slate-200/80 rounded-2xl p-6 md:p-8 shadow-[0_18px_50px_rgba(15,23,42,0.10)]"
               >
+                {/* 3-Step Progress Strip */}
+                <div className="flex items-center justify-center gap-2 mb-7">
+                  {[
+                    { label: "Vehicle Profile", step: 1 },
+                    { label: "Driving Context", step: 2 },
+                    { label: "Readiness Result", step: 3 },
+                  ].map((s, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <div className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 border transition-all ${
+                        s.step === 1
+                          ? "bg-blue-50 border-blue-200 text-blue-700"
+                          : "bg-slate-50 border-slate-200 text-slate-400"
+                      }`}>
+                        <span className={`text-[10px] font-mono font-bold w-5 h-5 rounded-full flex items-center justify-center ${
+                          s.step === 1 ? "bg-[#0062ff] text-white" : "bg-slate-200 text-slate-500"
+                        }`}>
+                          {s.step}
+                        </span>
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider">{s.label}</span>
+                      </div>
+                      {i < 2 && (
+                        <svg className="w-3 h-3 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="m9 18 6-6-6-6" />
+                        </svg>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
                 <div className="text-center mb-8 border-b border-slate-150 pb-5">
-                  <span className="text-xs font-mono font-bold text-[#0062ff] uppercase tracking-widest">Vehicle Readiness Check</span>
+                  <span className="text-xs font-mono font-bold text-[#0062ff] uppercase tracking-widest">60-Second Readiness Check</span>
                   <h3 className="text-2xl font-display font-bold text-slate-900 mt-1 uppercase tracking-tight">Check Your Vehicle & Driving Profile</h3>
                   <p className="text-xs text-slate-500 mt-1">Answer a few quick questions to see how your vehicle and driving habits align with the Astrateq pre-launch validation program.</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Vehicle Info */}
-                  <div className="space-y-4">
-                    <h4 className="text-xs font-mono font-bold text-[#0062ff] uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                      <Car className="w-4 h-4" /> Vehicle Information
-                    </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  {/* Vehicle Info Panel */}
+                  <div className="bg-[#F8FBFF] border border-[#DCEBFA] rounded-2xl p-5 md:p-6 shadow-sm space-y-4">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-1 h-5 bg-[#0062ff] rounded-full" />
+                      <h4 className="text-xs font-mono font-bold text-[#0062ff] uppercase tracking-wider flex items-center gap-1.5">
+                        <Car className="w-4 h-4" /> Vehicle Information
+                      </h4>
+                    </div>
 
                     <div>
                       <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5">Manufacturer / Make</label>
@@ -564,7 +596,7 @@ export default function App() {
                           else if (e.target.value === "Chevrolet") setVehicleModel("Bolt EV");
                           else if (e.target.value === "Subaru") setVehicleModel("Outback");
                         }}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden"
+                        className="w-full bg-white border border-[#DCEBFA] rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden"
                       >
                         <option value="Toyota">Toyota</option>
                         <option value="Ford">Ford</option>
@@ -583,7 +615,7 @@ export default function App() {
                         value={vehicleModel}
                         onChange={(e) => setVehicleModel(e.target.value)}
                         placeholder="e.g. RAV4"
-                        className={`w-full bg-slate-50 border rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden ${formErrors.model ? "border-red-400" : "border-slate-200"}`}
+                        className={`w-full bg-white border rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden ${formErrors.model ? "border-red-400" : "border-[#DCEBFA]"}`}
                       />
                       {formErrors.model && <p className="text-[10px] text-red-500 mt-1 font-medium">{formErrors.model}</p>}
                     </div>
@@ -594,7 +626,7 @@ export default function App() {
                         <select
                           value={vehicleYear}
                           onChange={(e) => setVehicleYear(parseInt(e.target.value))}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden"
+                          className="w-full bg-white border border-[#DCEBFA] rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden"
                         >
                           {Array.from({ length: 31 }, (_, i) => 2026 - i).map((y) => (
                             <option key={y} value={y}>{y}</option>
@@ -607,7 +639,7 @@ export default function App() {
                         <select
                           value={signalComplexity}
                           onChange={(e) => setSignalComplexity(parseInt(e.target.value))}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden"
+                          className="w-full bg-white border border-[#DCEBFA] rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden"
                         >
                           <option value="1">1 (Standard Radio)</option>
                           <option value="2">2 (Bluetooth Sync)</option>
@@ -619,11 +651,14 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Driving Profile */}
-                  <div className="space-y-4">
-                    <h4 className="text-xs font-mono font-bold text-[#0062ff] uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                      <Compass className="w-4 h-4" /> Driving Profile & Contact
-                    </h4>
+                  {/* Driving Profile & Contact Panel */}
+                  <div className="bg-[#F8FBFF] border border-[#DCEBFA] rounded-2xl p-5 md:p-6 shadow-sm space-y-4">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-1 h-5 bg-[#06b6d4] rounded-full" />
+                      <h4 className="text-xs font-mono font-bold text-[#0062ff] uppercase tracking-wider flex items-center gap-1.5">
+                        <Compass className="w-4 h-4" /> Driving Profile & Contact
+                      </h4>
+                    </div>
 
                     <div className="grid grid-cols-2 gap-4">
                       <div>
@@ -631,7 +666,7 @@ export default function App() {
                         <select
                           value={summerHeatExposure}
                           onChange={(e) => setSummerHeatExposure(e.target.value as any)}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden"
+                          className="w-full bg-white border border-[#DCEBFA] rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden"
                         >
                           <option value="Low">Low (Parked in Shade)</option>
                           <option value="Medium">Medium (Mixed Urban)</option>
@@ -644,7 +679,7 @@ export default function App() {
                         <select
                           value={highwayUsage}
                           onChange={(e) => setHighwayUsage(e.target.value as any)}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden"
+                          className="w-full bg-white border border-[#DCEBFA] rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden"
                         >
                           <option value="Low">Low (City Commuter)</option>
                           <option value="Moderate">Moderate (Regional Routes)</option>
@@ -655,7 +690,7 @@ export default function App() {
 
                     <div>
                       <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Privacy Sensitivity (1–5)</label>
-                      <div className="flex items-center justify-between gap-1.5 bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                      <div className="flex items-center justify-between gap-1.5 bg-white p-2.5 rounded-lg border border-[#DCEBFA]">
                         {[1, 2, 3, 4, 5].map((val) => (
                           <button
                             type="button"
@@ -664,7 +699,7 @@ export default function App() {
                             className={`flex-1 py-2 rounded-md text-xs font-mono font-bold border transition cursor-pointer ${
                               privacySensitivity === val
                                 ? "bg-[#0062ff] border-[#0062ff] text-white shadow-lg shadow-blue-600/20"
-                                : "bg-white border-slate-200 text-slate-600 hover:bg-slate-100"
+                                : "bg-white border-[#DCEBFA] text-slate-600 hover:bg-slate-50"
                             }`}
                           >
                             {val}
@@ -673,7 +708,7 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="space-y-3 border-t border-slate-150 pt-4">
+                    <div className="space-y-3 border-t border-[#DCEBFA] pt-4">
                       <div>
                         <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5">First Name <span className="text-slate-400 normal-case font-normal">(optional)</span></label>
                         <input
@@ -681,7 +716,7 @@ export default function App() {
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           placeholder="Your name"
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden"
+                          className="w-full bg-white border border-[#DCEBFA] rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden"
                         />
                       </div>
 
@@ -693,7 +728,7 @@ export default function App() {
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="name@domain.ca"
-                          className={`w-full bg-slate-50 border rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden ${formErrors.email ? "border-red-400" : "border-slate-200"}`}
+                          className={`w-full bg-white border rounded-lg px-3 py-2.5 text-xs font-medium text-slate-800 focus:border-[#0062ff] focus:outline-hidden ${formErrors.email ? "border-red-400" : "border-[#DCEBFA]"}`}
                         />
                         {formErrors.email && <p className="text-[10px] text-red-500 mt-1 font-medium">{formErrors.email}</p>}
                       </div>
@@ -701,16 +736,16 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Submit CTA */}
-                <div className="mt-8 pt-6 border-t border-slate-150 text-center">
+                {/* Submit CTA — Action Bar */}
+                <div className="mt-8 pt-6 border-t border-slate-150 text-center bg-blue-50/30 -mx-6 md:-mx-8 px-6 md:px-8 pb-6 md:pb-8 rounded-b-2xl">
                   <button
                     onClick={handleStartAnalysis}
                     className="w-full sm:w-auto bg-[#0062ff] hover:bg-[#0052d4] text-white font-display font-black uppercase tracking-widest text-xs px-10 py-4 rounded-xl transition shadow-[0_4px_12px_rgba(0,98,255,0.15)] inline-flex items-center justify-center gap-2 active:scale-99 cursor-pointer"
                   >
                     Generate My Readiness Score <ChevronRight className="w-4 h-4 text-white" />
                   </button>
-                  <p className="text-[10px] text-slate-400 mt-3 font-mono">
-                    Privacy note: This readiness check is designed to minimize unnecessary data exposure.
+                  <p className="text-[10px] text-slate-500 mt-3 font-mono">
+                    60 seconds · No payment required · Instant preview
                   </p>
                 </div>
               </motion.div>
@@ -960,7 +995,9 @@ export default function App() {
           </AnimatePresence>
         </div>
 
-        <TrustModule />
+        <div className="mt-16 md:mt-20">
+          <TrustModule />
+        </div>
 
         {showAdmin && (
           <div className="mt-12">
