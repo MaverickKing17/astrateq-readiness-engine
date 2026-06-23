@@ -265,38 +265,38 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col relative font-sans selection:bg-brand-cyan selection:text-brand-dark">
+    <div className="min-h-screen bg-[#0A0B10] text-white flex flex-col relative font-sans selection:bg-red-600 selection:text-white">
       
       {/* Upper Navigation & Brand Header */}
-      <header className="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200/60 px-6 py-4">
+      <header className="sticky top-0 z-50 bg-[#0A0B10]/80 backdrop-blur-md border-b border-white/10 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-brand-navy rounded-xl flex items-center justify-center text-brand-cyan shadow-sm">
-              <Car className="w-5 h-5" />
+            <div className="w-9 h-9 bg-red-600 rounded-xl flex items-center justify-center text-white font-bold text-lg italic shadow-md shadow-red-600/20">
+              A
             </div>
             <div>
-              <h1 className="text-sm font-display font-bold tracking-tight text-brand-navy">ASTRATEQ GADGETS</h1>
-              <p className="text-[10px] font-mono font-medium text-slate-400 tracking-wider">DRIVE SAFER. DRIVE SMARTER.</p>
+              <h1 className="text-sm font-display font-black tracking-tighter uppercase italic text-white">ASTRATEQ <span className="text-red-500">GADGETS</span></h1>
+              <p className="text-[10px] font-mono font-bold text-slate-500 tracking-wider">DRIVE SAFER. DRIVE SMARTER.</p>
             </div>
           </div>
           
           <div className="flex items-center gap-4">
-            <span className="hidden sm:inline-flex items-center gap-1.5 text-[10px] font-mono font-bold bg-indigo-50 border border-indigo-100/50 text-indigo-700 px-3 py-1 rounded-full uppercase tracking-wider">
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse" />
-              Canadian Pre-Launch Validation
+            <span className="hidden sm:inline-flex items-center gap-1.5 text-[10px] font-mono font-bold bg-white/10 border border-red-500/30 text-red-400 px-3 py-1 rounded-md uppercase tracking-widest">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+              Engineered for the North
             </span>
 
             {/* Float Config Operational Desk Button */}
             <button
               onClick={() => setShowAdmin(!showAdmin)}
-              className="p-2 text-slate-500 hover:text-slate-800 rounded-lg hover:bg-slate-100 transition relative flex items-center gap-1"
+              className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-white/10 transition relative flex items-center gap-1"
               title="Open Ops Desk"
               id="ops-desk-toggle"
             >
               <Settings className="w-4 h-4" />
               <span className="text-[11px] font-mono font-semibold hidden md:inline">Ops Desk</span>
               {leads.length > 0 && (
-                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-brand-cyan border-2 border-white rounded-full" />
+                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 border-2 border-[#0A0B10] rounded-full" />
               )}
             </button>
           </div>
@@ -318,15 +318,15 @@ export default function App() {
             >
               {/* Hero Left Content */}
               <div className="lg:col-span-7 space-y-6 text-left">
-                <span className="text-xs font-mono font-bold text-indigo-600 tracking-widest uppercase">
-                  Upcoming Brand • Phase 1 Market Validation
+                <span className="px-3 py-1 bg-white/10 rounded-md text-red-400 text-xs font-bold uppercase tracking-widest border border-red-500/30">
+                  🇨🇦 Upcoming Brand • Phase 1 Market Validation
                 </span>
                 
-                <h2 className="text-4xl md:text-5xl font-display font-extrabold text-brand-navy tracking-tight leading-tight">
-                  Privacy-first vehicle intelligence for <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-indigo-700">smarter driving.</span>
+                <h2 className="text-4xl md:text-5xl font-display font-black leading-tight tracking-tight uppercase">
+                  Privacy-first vehicle intelligence for <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-400 to-red-600">smarter driving.</span>
                 </h2>
                 
-                <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-2xl">
+                <p className="text-slate-400 text-sm md:text-base leading-relaxed max-w-2xl">
                   A pre-launch Canadian vehicle intelligence platform exploring privacy-first diagnostics, driver awareness, and smarter automotive insights. Secure your diagnostic hardware allocation and help shape local automotive safety.
                 </p>
 
@@ -334,11 +334,11 @@ export default function App() {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <a
                     href="#configurator-form-anchor"
-                    className="inline-flex items-center justify-center gap-2 bg-brand-navy hover:bg-brand-navy/90 text-white font-display font-bold text-sm px-6 py-3.5 rounded-xl transition shadow-lg shadow-brand-navy/10 group active:scale-98"
+                    className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-500 text-white font-display font-bold text-sm px-6 py-3.5 rounded-xl transition shadow-lg shadow-red-600/30 group active:scale-98"
                   >
                     Start Vehicle Readiness Analysis <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition" />
                   </a>
-                  <span className="text-[11px] font-mono text-slate-500 text-center sm:text-left">
+                  <span className="text-[11px] font-mono text-slate-400 text-center sm:text-left">
                     ⚡ 60 seconds • No payment required • Instant results
                   </span>
                 </div>
@@ -346,7 +346,8 @@ export default function App() {
 
               {/* Hero Right Visual Column */}
               <div className="lg:col-span-5 relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200/80 aspect-video lg:aspect-square bg-slate-100 flex items-center justify-center">
+                <div className="absolute -inset-10 bg-red-600/10 blur-[100px] rounded-full"></div>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-video lg:aspect-square bg-[#111218] flex items-center justify-center">
                   <img
                     src="/src/assets/images/premium_canadian_suv.jpg"
                     alt="Premium Modern Vehicle"
@@ -354,8 +355,8 @@ export default function App() {
                     className="w-full h-full object-cover"
                   />
                   {/* Subtle watermarked brand info overlay */}
-                  <div className="absolute bottom-4 left-4 bg-brand-navy/85 backdrop-blur-xs px-3.5 py-1.5 rounded-lg border border-white/10 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-brand-cyan" />
+                  <div className="absolute bottom-4 left-4 bg-black/85 backdrop-blur-xs px-3.5 py-1.5 rounded-lg border border-white/10 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
                     <span className="text-[10px] font-mono text-slate-300">Astrateq Edge Chassis Validation</span>
                   </div>
                 </div>
@@ -378,23 +379,23 @@ export default function App() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
-                className="bg-white rounded-2xl border border-slate-200/80 p-6 md:p-8 shadow-xs"
+                className="bg-[#111218] border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl backdrop-blur-md"
               >
-                <div className="text-center mb-8 border-b border-slate-100 pb-5">
-                  <span className="text-xs font-mono font-bold text-brand-cyan uppercase">Lead Profiler</span>
-                  <h3 className="text-2xl font-display font-bold text-slate-800 mt-1">Configure Your Vehicle & Profile</h3>
-                  <p className="text-xs text-slate-500 mt-1">Select parameters to benchmark signal telemetry leakage and hardware readiness.</p>
+                <div className="text-center mb-8 border-b border-white/10 pb-5">
+                  <span className="text-xs font-mono font-bold text-red-500 uppercase tracking-widest">Active Configurator</span>
+                  <h3 className="text-2xl font-display font-bold text-white mt-1 uppercase tracking-tight">Configure Your Vehicle & Profile</h3>
+                  <p className="text-xs text-slate-400 mt-1">Select parameters to benchmark signal telemetry leakage and hardware readiness.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Vehicle Parameters Card */}
                   <div className="space-y-4">
-                    <h4 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                      <Car className="w-4 h-4 text-brand-cyan" /> Vehicle Information
+                    <h4 className="text-xs font-mono font-bold text-red-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                      <Car className="w-4 h-4 text-red-500" /> Vehicle Information
                     </h4>
                     
                     <div>
-                      <label className="block text-xs font-semibold text-slate-600 mb-1.5">Manufacturer / Make</label>
+                      <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Manufacturer / Make</label>
                       <select
                         value={vehicleMake}
                         onChange={(e) => {
@@ -407,58 +408,58 @@ export default function App() {
                           else if (e.target.value === "Chevrolet") setVehicleModel("Bolt EV");
                           else if (e.target.value === "Subaru") setVehicleModel("Outback");
                         }}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs font-medium focus:border-brand-cyan focus:outline-hidden"
+                        className="w-full bg-black/40 border border-white/20 rounded-lg px-3 py-2 text-xs font-medium text-white focus:border-red-500 focus:outline-hidden"
                       >
-                        <option value="Toyota">Toyota</option>
-                        <option value="Ford">Ford</option>
-                        <option value="Tesla">Tesla</option>
-                        <option value="BMW">BMW</option>
-                        <option value="Chevrolet">Chevrolet</option>
-                        <option value="Subaru">Subaru</option>
-                        <option value="Honda">Honda</option>
+                        <option value="Toyota" className="bg-[#111218]">Toyota</option>
+                        <option value="Ford" className="bg-[#111218]">Ford</option>
+                        <option value="Tesla" className="bg-[#111218]">Tesla</option>
+                        <option value="BMW" className="bg-[#111218]">BMW</option>
+                        <option value="Chevrolet" className="bg-[#111218]">Chevrolet</option>
+                        <option value="Subaru" className="bg-[#111218]">Subaru</option>
+                        <option value="Honda" className="bg-[#111218]">Honda</option>
                       </select>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-600 mb-1.5">Model Name</label>
+                      <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Model Name</label>
                       <input
                         type="text"
                         value={vehicleModel}
                         onChange={(e) => setVehicleModel(e.target.value)}
                         placeholder="e.g. RAV4"
-                        className={`w-full bg-slate-50 border rounded-lg px-3 py-2 text-xs font-medium focus:border-brand-cyan focus:outline-hidden ${
-                          formErrors.model ? "border-rose-400 focus:border-rose-400" : "border-slate-200"
+                        className={`w-full bg-black/40 border rounded-lg px-3 py-2 text-xs font-medium text-white focus:border-red-500 focus:outline-hidden ${
+                          formErrors.model ? "border-red-500 focus:border-red-500" : "border-white/20"
                         }`}
                       />
-                      {formErrors.model && <p className="text-[10px] text-rose-500 mt-1 font-medium">{formErrors.model}</p>}
+                      {formErrors.model && <p className="text-[10px] text-red-500 mt-1 font-medium">{formErrors.model}</p>}
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-semibold text-slate-600 mb-1.5">Production Year</label>
+                        <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Production Year</label>
                         <select
                           value={vehicleYear}
                           onChange={(e) => setVehicleYear(parseInt(e.target.value))}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs font-medium focus:border-brand-cyan focus:outline-hidden"
+                          className="w-full bg-black/40 border border-white/20 rounded-lg px-3 py-2 text-xs font-medium text-white focus:border-red-500 focus:outline-hidden"
                         >
                           {Array.from({ length: 31 }, (_, i) => 2026 - i).map((y) => (
-                            <option key={y} value={y}>{y}</option>
+                            <option key={y} value={y} className="bg-[#111218]">{y}</option>
                           ))}
                         </select>
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold text-slate-600 mb-1.5">Onboard Connected Devices</label>
+                        <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Connected Devices</label>
                         <select
                           value={signalComplexity}
                           onChange={(e) => setSignalComplexity(parseInt(e.target.value))}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs font-medium focus:border-brand-cyan focus:outline-hidden"
+                          className="w-full bg-black/40 border border-white/20 rounded-lg px-3 py-2 text-xs font-medium text-white focus:border-red-500 focus:outline-hidden"
                         >
-                          <option value="1">1 (Standard Radio)</option>
-                          <option value="2">2 (Bluetooth Sync)</option>
-                          <option value="4">4 (Dashcam + Connected GPS)</option>
-                          <option value="6">6 (Integrated Telematics)</option>
-                          <option value="8">8+ (Smart Cockpit Nodes)</option>
+                          <option value="1" className="bg-[#111218]">1 (Standard Radio)</option>
+                          <option value="2" className="bg-[#111218]">2 (Bluetooth Sync)</option>
+                          <option value="4" className="bg-[#111218]">4 (Dashcam + Connected GPS)</option>
+                          <option value="6" className="bg-[#111218]">6 (Integrated Telematics)</option>
+                          <option value="8" className="bg-[#111218]">8+ (Smart Cockpit Nodes)</option>
                         </select>
                       </div>
                     </div>
@@ -466,50 +467,50 @@ export default function App() {
 
                   {/* Driving & Identity Parameters Card */}
                   <div className="space-y-4">
-                    <h4 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                      <Compass className="w-4 h-4 text-brand-cyan" /> Driving Habits & Identity
+                    <h4 className="text-xs font-mono font-bold text-red-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                      <Compass className="w-4 h-4 text-red-500" /> Driving Habits & Identity
                     </h4>
 
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-semibold text-slate-600 mb-1.5">Summer Heat Exposure</label>
+                        <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Summer Heat Exposure</label>
                         <select
                           value={summerHeatExposure}
                           onChange={(e) => setSummerHeatExposure(e.target.value as any)}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs font-medium focus:border-brand-cyan focus:outline-hidden"
+                          className="w-full bg-black/40 border border-white/20 rounded-lg px-3 py-2 text-xs font-medium text-white focus:border-red-500 focus:outline-hidden"
                         >
-                          <option value="Low">Low (Parked in Shade)</option>
-                          <option value="Medium">Medium (Mixed Urban)</option>
-                          <option value="High">High (Direct Sun/Heatwaves)</option>
+                          <option value="Low" className="bg-[#111218]">Low (Parked in Shade)</option>
+                          <option value="Medium" className="bg-[#111218]">Medium (Mixed Urban)</option>
+                          <option value="High" className="bg-[#111218]">High (Direct Sun/Heatwaves)</option>
                         </select>
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold text-slate-600 mb-1.5">Highway Usage</label>
+                        <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Highway Usage</label>
                         <select
                           value={highwayUsage}
                           onChange={(e) => setHighwayUsage(e.target.value as any)}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs font-medium focus:border-brand-cyan focus:outline-hidden"
+                          className="w-full bg-black/40 border border-white/20 rounded-lg px-3 py-2 text-xs font-medium text-white focus:border-red-500 focus:outline-hidden"
                         >
-                          <option value="Low">Low (City Commuter)</option>
-                          <option value="Moderate">Moderate (Regional Routes)</option>
-                          <option value="Heavy">Heavy (Frequent 400-Series)</option>
+                          <option value="Low" className="bg-[#111218]">Low (City Commuter)</option>
+                          <option value="Moderate" className="bg-[#111218]">Moderate (Regional Routes)</option>
+                          <option value="Heavy" className="bg-[#111218]">Heavy (Frequent 400-Series)</option>
                         </select>
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-600 mb-1">Privacy Sensitivity Index (1-5)</label>
-                      <div className="flex items-center justify-between gap-1.5 bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                      <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Privacy Sensitivity Index (1-5)</label>
+                      <div className="flex items-center justify-between gap-1.5 bg-black/40 p-2.5 rounded-lg border border-white/10">
                         {[1, 2, 3, 4, 5].map((val) => (
                           <button
                             type="button"
                             key={val}
                             onClick={() => setPrivacySensitivity(val)}
-                            className={`flex-1 py-1.5 rounded-md text-xs font-mono font-bold border transition ${
+                            className={`flex-1 py-1.5 rounded-md text-xs font-mono font-bold border transition cursor-pointer ${
                               privacySensitivity === val
-                                ? "bg-brand-navy border-brand-navy text-brand-cyan"
-                                : "bg-white border-slate-200 text-slate-500 hover:bg-slate-100"
+                                ? "bg-red-600 border-red-600 text-white shadow-lg shadow-red-600/30"
+                                : "bg-white/5 border-white/10 text-slate-300 hover:bg-white/10"
                             }`}
                           >
                             {val}
@@ -518,45 +519,45 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-slate-100 pt-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-white/10 pt-4">
                       <div>
-                        <label className="block text-xs font-semibold text-slate-600 mb-1.5">First Name</label>
+                        <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">First Name</label>
                         <input
                           type="text"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           placeholder="Your Name"
-                          className={`w-full bg-slate-50 border rounded-lg px-3 py-2 text-xs font-medium focus:border-brand-cyan focus:outline-hidden ${
-                            formErrors.name ? "border-rose-400 focus:border-rose-400" : "border-slate-200"
+                          className={`w-full bg-black/40 border rounded-lg px-3 py-2 text-xs font-medium text-white focus:border-red-500 focus:outline-hidden ${
+                            formErrors.name ? "border-red-500 focus:border-red-500" : "border-white/20"
                           }`}
                         />
-                        {formErrors.name && <p className="text-[10px] text-rose-500 mt-1 font-medium">{formErrors.name}</p>}
+                        {formErrors.name && <p className="text-[10px] text-red-500 mt-1 font-medium">{formErrors.name}</p>}
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold text-slate-600 mb-1.5">Email Address</label>
+                        <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Email Address</label>
                         <input
                           type="email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="name@domain.ca"
-                          className={`w-full bg-slate-50 border rounded-lg px-3 py-2 text-xs font-medium focus:border-brand-cyan focus:outline-hidden ${
-                            formErrors.email ? "border-rose-400 focus:border-rose-400" : "border-slate-200"
+                          className={`w-full bg-black/40 border rounded-lg px-3 py-2 text-xs font-medium text-white focus:border-red-500 focus:outline-hidden ${
+                            formErrors.email ? "border-red-500 focus:border-red-500" : "border-white/20"
                           }`}
                         />
-                        {formErrors.email && <p className="text-[10px] text-rose-500 mt-1 font-medium">{formErrors.email}</p>}
+                        {formErrors.email && <p className="text-[10px] text-red-500 mt-1 font-medium">{formErrors.email}</p>}
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Dominant Call to Action (Strict Step 2 Requirement) */}
-                <div className="mt-8 pt-6 border-t border-slate-100 text-center">
+                <div className="mt-8 pt-6 border-t border-white/10 text-center">
                   <button
                     onClick={handleStartAnalysis}
-                    className="w-full sm:w-auto bg-brand-navy hover:bg-brand-navy/95 text-white font-display font-extrabold text-sm px-10 py-4 rounded-xl transition shadow-lg shadow-brand-navy/15 inline-flex items-center justify-center gap-2 active:scale-99"
+                    className="w-full sm:w-auto bg-white text-black font-display font-black uppercase tracking-widest text-xs px-10 py-4 rounded-xl transition hover:bg-red-600 hover:text-white shadow-[0_0_20px_rgba(255,255,255,0.1)] inline-flex items-center justify-center gap-2 active:scale-99 cursor-pointer"
                   >
-                    Start Vehicle Readiness Analysis <ChevronRight className="w-4 h-4 text-brand-cyan" />
+                    Start Vehicle Readiness Analysis <ChevronRight className="w-4 h-4 text-red-500 hover:text-white" />
                   </button>
                   <p className="text-[10px] text-slate-400 mt-3 font-mono">
                     Privacy Protection: Diagnostic queries are performed offline using localized schema variables.
@@ -612,34 +613,34 @@ export default function App() {
                 className="space-y-8"
               >
                 {/* Results Main Banner */}
-                <div className="bg-white rounded-2xl border border-slate-200/80 p-6 md:p-8 shadow-xs">
-                  <span className="text-[10px] font-mono font-bold bg-brand-cyan/15 text-cyan-800 px-3 py-1 rounded-full uppercase tracking-wider">
+                <div className="bg-[#111218] rounded-2xl border border-white/10 p-6 md:p-8 shadow-2xl backdrop-blur-md">
+                  <span className="text-[10px] font-mono font-bold bg-red-500/20 text-red-400 px-3 py-1 rounded-full uppercase tracking-widest border border-red-500/30">
                     Assessment Verified
                   </span>
                   
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mt-4 pb-6 border-b border-slate-100">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mt-4 pb-6 border-b border-white/10">
                     <div className="space-y-1">
-                      <span className="text-xs text-slate-500 font-mono">Preliminary Readiness Result</span>
-                      <h3 className="text-2xl font-display font-extrabold text-slate-900 leading-snug">
+                      <span className="text-xs text-slate-400 font-mono">Preliminary Readiness Result</span>
+                      <h3 className="text-2xl font-display font-black text-white leading-snug uppercase tracking-tight">
                         {scanResult.eligibilityClassification.cohortTier} → Eligible for Priority Cohort Review
                       </h3>
-                      <p className="text-xs text-slate-500 mt-1">
+                      <p className="text-xs text-slate-400 mt-1">
                         Verified footprint for {vehicleYear} {vehicleMake} {vehicleModel}.
                       </p>
                     </div>
 
-                    <div className="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <div className="flex items-center gap-3 bg-black/40 p-4 rounded-xl border border-white/10">
                       {/* Circle Gauge rendering score */}
                       <div className="relative w-14 h-14 flex items-center justify-center">
                         <svg className="w-full h-full transform -rotate-90">
-                          <circle cx="28" cy="28" r="24" stroke="#e2e8f0" strokeWidth="4" fill="none" />
-                          <circle cx="28" cy="28" r="24" stroke="#06b6d4" strokeWidth="4" fill="none" strokeDasharray={`${2 * Math.PI * 24}`} strokeDashoffset={`${2 * Math.PI * 24 * (1 - scanResult.readinessScore / 100)}`} />
+                          <circle cx="28" cy="28" r="24" stroke="rgba(255,255,255,0.05)" strokeWidth="4" fill="none" />
+                          <circle cx="28" cy="28" r="24" stroke="#ef4444" strokeWidth="4" fill="none" strokeDasharray={`${2 * Math.PI * 24}`} strokeDashoffset={`${2 * Math.PI * 24 * (1 - scanResult.readinessScore / 100)}`} />
                         </svg>
-                        <span className="absolute text-xs font-mono font-bold text-slate-800">{scanResult.readinessScore}</span>
+                        <span className="absolute text-xs font-mono font-bold text-white">{scanResult.readinessScore}</span>
                       </div>
                       <div>
                         <div className="text-[10px] font-mono text-slate-400 uppercase font-semibold">Readiness Score</div>
-                        <div className="text-xs font-bold text-slate-700">Certified Compatible</div>
+                        <div className="text-xs font-bold text-slate-200">Certified Compatible</div>
                       </div>
                     </div>
                   </div>
@@ -647,22 +648,22 @@ export default function App() {
                   {/* Summer thermal risks */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                     <div className="space-y-2">
-                      <h4 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                        <ShieldAlert className="w-4 h-4 text-rose-500" /> Southern Ontario Driving Risk Profile
+                      <h4 className="text-xs font-mono font-bold text-red-400 uppercase tracking-wider flex items-center gap-1.5">
+                        <ShieldAlert className="w-4 h-4 text-red-500" /> Southern Ontario Driving Risk Profile
                       </h4>
-                      <p className="text-xs font-bold text-rose-950 flex items-center gap-1.5">
-                        <span className="w-2 h-2 rounded-full bg-rose-500" /> GTA Risk Index: {scanResult.summerDrivingRiskProfile.riskLevel}
+                      <p className="text-xs font-bold text-red-400 flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" /> GTA Risk Index: {scanResult.summerDrivingRiskProfile.riskLevel}
                       </p>
-                      <p className="text-xs text-slate-500 leading-relaxed">
+                      <p className="text-xs text-slate-300 leading-relaxed">
                         {scanResult.summerDrivingRiskProfile.gtaSpecificNotes}
                       </p>
                     </div>
 
                     <div className="space-y-2">
-                      <h4 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                        <Layers className="w-4 h-4 text-brand-cyan" /> Thermal System Analysis
+                      <h4 className="text-xs font-mono font-bold text-red-400 uppercase tracking-wider flex items-center gap-1.5">
+                        <Layers className="w-4 h-4 text-red-500" /> Thermal System Analysis
                       </h4>
-                      <p className="text-xs text-slate-500 leading-relaxed">
+                      <p className="text-xs text-slate-300 leading-relaxed">
                         {scanResult.summerDrivingRiskProfile.thermalExposures}
                       </p>
                     </div>
@@ -672,86 +673,86 @@ export default function App() {
                 {/* Cohort Classification Section (Step 5 Requirement) */}
                 <div>
                   <div className="text-center mb-6">
-                    <span className="text-xs font-mono font-bold text-slate-500 uppercase">Pre-Launch Calibration</span>
-                    <h4 className="text-xl font-display font-bold text-slate-800 mt-1">Cohort Classification Tiers</h4>
+                    <span className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">Pre-Launch Calibration</span>
+                    <h4 className="text-xl font-display font-black text-white mt-1 uppercase tracking-tight">Cohort Classification Tiers</h4>
                     <p className="text-xs text-slate-400 mt-1">We limit driver intake per cohort to preserve hardware firmware validation telemetry.</p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* Tier 1: High */}
-                    <div className={`bg-white rounded-2xl p-5 border relative overflow-hidden flex flex-col justify-between transition-all ${
+                    <div className={`bg-white/5 border rounded-2xl p-5 relative overflow-hidden flex flex-col justify-between transition-all ${
                       scanResult.eligibilityClassification.cohortTier === "High Readiness"
-                        ? "border-emerald-500 ring-2 ring-emerald-500/20 shadow-md"
-                        : "border-slate-200/80 opacity-75"
+                        ? "border-red-500 ring-2 ring-red-500/20 shadow-lg bg-gradient-to-b from-white/5 to-red-950/20"
+                        : "border-white/10 opacity-60"
                     }`}>
                       {scanResult.eligibilityClassification.cohortTier === "High Readiness" && (
-                        <div className="absolute top-0 right-0 bg-emerald-500 text-white font-mono text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-bl-lg">
+                        <div className="absolute top-0 right-0 bg-red-600 text-white font-mono text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-bl-lg">
                           Your Assignment
                         </div>
                       )}
                       <div>
-                        <span className="text-xs font-mono font-semibold text-emerald-600">High Readiness</span>
-                        <h5 className="text-lg font-display font-bold text-slate-800 mt-1">Founding Early Allocation</h5>
+                        <span className="text-xs font-mono font-bold text-red-400 uppercase tracking-widest">High Readiness</span>
+                        <h5 className="text-lg font-display font-bold text-white mt-1">Founding Early Allocation</h5>
                         <p className="text-[11px] text-slate-400 font-medium font-mono mt-1">Top 20% of eligible drivers</p>
-                        <p className="text-xs text-slate-500 mt-3 leading-relaxed">
+                        <p className="text-xs text-slate-300 mt-3 leading-relaxed">
                           Best-suited for localized edge diagnostic loops with instant telemetry validation locks.
                         </p>
-                        <ul className="text-[10px] text-slate-500 font-mono space-y-2 mt-4 pt-4 border-t border-slate-100">
-                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-emerald-500" /> Early access to updates</li>
-                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-emerald-500" /> Priority hardware allocation</li>
-                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-emerald-500" /> Free diagnostic calibrations</li>
+                        <ul className="text-[10px] text-slate-400 font-mono space-y-2 mt-4 pt-4 border-t border-white/10">
+                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-red-500" /> Early access to updates</li>
+                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-red-500" /> Priority hardware allocation</li>
+                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-red-500" /> Free diagnostic calibrations</li>
                         </ul>
                       </div>
                     </div>
 
                     {/* Tier 2: Moderate */}
-                    <div className={`bg-white rounded-2xl p-5 border relative overflow-hidden flex flex-col justify-between transition-all ${
+                    <div className={`bg-white/5 border rounded-2xl p-5 relative overflow-hidden flex flex-col justify-between transition-all ${
                       scanResult.eligibilityClassification.cohortTier === "Moderate Readiness"
-                        ? "border-amber-500 ring-2 ring-amber-500/20 shadow-md"
-                        : "border-slate-200/80 opacity-75"
+                        ? "border-orange-500 ring-2 ring-orange-500/20 shadow-lg bg-gradient-to-b from-white/5 to-orange-950/10"
+                        : "border-white/10 opacity-60"
                     }`}>
                       {scanResult.eligibilityClassification.cohortTier === "Moderate Readiness" && (
-                        <div className="absolute top-0 right-0 bg-amber-500 text-white font-mono text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-bl-lg">
+                        <div className="absolute top-0 right-0 bg-orange-500 text-white font-mono text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-bl-lg">
                           Your Assignment
                         </div>
                       )}
                       <div>
-                        <span className="text-xs font-mono font-semibold text-amber-600">Moderate Readiness</span>
-                        <h5 className="text-lg font-display font-bold text-slate-800 mt-1">Priority Evaluation Cohort</h5>
+                        <span className="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest">Moderate Readiness</span>
+                        <h5 className="text-lg font-display font-bold text-white mt-1">Priority Evaluation Cohort</h5>
                         <p className="text-[11px] text-slate-400 font-medium font-mono mt-1">Next 50% of validated drivers</p>
-                        <p className="text-xs text-slate-500 mt-3 leading-relaxed">
+                        <p className="text-xs text-slate-300 mt-3 leading-relaxed">
                           Optimized for standard OBD-II telemetry logs with localized diagnostic alerts.
                         </p>
-                        <ul className="text-[10px] text-slate-500 font-mono space-y-2 mt-4 pt-4 border-t border-slate-100">
-                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-amber-500" /> Custom diagnostics dashboard</li>
-                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-amber-500" /> Enhanced sensor analysis loops</li>
-                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-amber-500" /> Standard hardware queues</li>
+                        <ul className="text-[10px] text-slate-400 font-mono space-y-2 mt-4 pt-4 border-t border-white/10">
+                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-orange-500" /> Custom diagnostics dashboard</li>
+                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-orange-500" /> Enhanced sensor analysis loops</li>
+                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-orange-500" /> Standard hardware queues</li>
                         </ul>
                       </div>
                     </div>
 
                     {/* Tier 3: Low */}
-                    <div className={`bg-white rounded-2xl p-5 border relative overflow-hidden flex flex-col justify-between transition-all ${
+                    <div className={`bg-white/5 border rounded-2xl p-5 relative overflow-hidden flex flex-col justify-between transition-all ${
                       scanResult.eligibilityClassification.cohortTier === "Low Readiness"
-                        ? "border-blue-500 ring-2 ring-blue-500/20 shadow-md"
-                        : "border-slate-200/80 opacity-75"
+                        ? "border-slate-500 ring-2 ring-slate-500/20 shadow-lg bg-gradient-to-b from-white/5 to-slate-950/10"
+                        : "border-white/10 opacity-60"
                     }`}>
                       {scanResult.eligibilityClassification.cohortTier === "Low Readiness" && (
-                        <div className="absolute top-0 right-0 bg-blue-500 text-white font-mono text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-bl-lg">
+                        <div className="absolute top-0 right-0 bg-slate-500 text-white font-mono text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-bl-lg">
                           Your Assignment
                         </div>
                       )}
                       <div>
-                        <span className="text-xs font-mono font-semibold text-blue-600">Low Readiness</span>
-                        <h5 className="text-lg font-display font-bold text-slate-800 mt-1">Standard Validation Queue</h5>
+                        <span className="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest">Low Readiness</span>
+                        <h5 className="text-lg font-display font-bold text-white mt-1">Standard Validation Queue</h5>
                         <p className="text-[11px] text-slate-400 font-medium font-mono mt-1">Remaining validated queue</p>
-                        <p className="text-xs text-slate-500 mt-3 leading-relaxed">
+                        <p className="text-xs text-slate-300 mt-3 leading-relaxed">
                           Assigned for standard firmware matching and customized cable calibrations.
                         </p>
-                        <ul className="text-[10px] text-slate-500 font-mono space-y-2 mt-4 pt-4 border-t border-slate-100">
-                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-blue-500" /> Standard security audit pass</li>
-                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-blue-500" /> Access to core diagnostic tools</li>
-                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-blue-500" /> Optional diagnostic hardware</li>
+                        <ul className="text-[10px] text-slate-400 font-mono space-y-2 mt-4 pt-4 border-t border-white/10">
+                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-slate-500" /> Standard security audit pass</li>
+                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-slate-500" /> Access to core diagnostic tools</li>
+                          <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-slate-500" /> Optional diagnostic hardware</li>
                         </ul>
                       </div>
                     </div>
@@ -759,32 +760,32 @@ export default function App() {
                 </div>
 
                 {/* Personalized Recommendations */}
-                <div className="bg-white rounded-2xl border border-slate-200/80 p-6 md:p-8 shadow-xs">
-                  <h4 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-4">
+                <div className="bg-[#111218] rounded-2xl border border-white/10 p-6 md:p-8 shadow-2xl backdrop-blur-md">
+                  <h4 className="text-xs font-mono font-bold text-red-400 uppercase tracking-wider mb-4">
                     Your Personalized Summer Diagnostic Bulletins
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {scanResult.customRecommendations.map((rec, i) => (
-                      <div key={i} className="flex items-start gap-3 bg-slate-50/50 p-3.5 rounded-xl border border-slate-100">
-                        <span className="text-xs font-mono font-bold bg-brand-navy text-brand-cyan w-6 h-6 rounded-full flex items-center justify-center shrink-0">
+                      <div key={i} className="flex items-start gap-3 bg-black/40 p-3.5 rounded-xl border border-white/10">
+                        <span className="text-xs font-mono font-bold bg-red-600 text-white w-6 h-6 rounded-full flex items-center justify-center shrink-0">
                           {i + 1}
                         </span>
-                        <p className="text-xs text-slate-600 leading-relaxed mt-0.5">{rec}</p>
+                        <p className="text-xs text-slate-300 leading-relaxed mt-0.5">{rec}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Secure Cohort Conversion Moment (Step 6 Requirement) */}
-                <div className="bg-brand-navy rounded-2xl border border-slate-800 p-6 md:p-8 text-white relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-brand-cyan/10 rounded-full blur-2xl pointer-events-none" />
+                <div className="bg-gradient-to-r from-red-950/40 via-red-900/20 to-black/80 rounded-2xl border border-red-500/30 p-6 md:p-8 text-white relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/15 rounded-full blur-2xl pointer-events-none" />
                   
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
                     <div className="space-y-2">
-                      <span className="text-[10px] font-mono bg-brand-cyan/25 text-brand-cyan border border-brand-cyan/20 px-2.5 py-1 rounded-full font-bold uppercase tracking-wider">
+                      <span className="text-[10px] font-mono bg-red-500/20 text-red-400 border border-red-500/30 px-2.5 py-1 rounded-full font-bold uppercase tracking-wider">
                         Secure Your Founding Cohort Status
                       </span>
-                      <h3 className="text-2xl font-display font-bold text-slate-100 mt-2">
+                      <h3 className="text-2xl font-display font-bold text-white mt-2">
                         Unlock Founding Driver Access
                       </h3>
                       <p className="text-xs text-slate-400 max-w-xl leading-relaxed">
@@ -793,15 +794,15 @@ export default function App() {
                       
                       {/* Microcopy (Page 5 Requirements) */}
                       <div className="flex items-center gap-4 text-[10px] font-mono text-slate-400 pt-2">
-                        <span className="flex items-center gap-1">✔ No payment required</span>
-                        <span className="flex items-center gap-1">✔ 60-second assessment</span>
-                        <span className="flex items-center gap-1">✔ Instant reservation</span>
+                        <span className="flex items-center gap-1"><CheckCircle className="w-3.5 h-3.5 text-red-500" /> No payment required</span>
+                        <span className="flex items-center gap-1"><CheckCircle className="w-3.5 h-3.5 text-red-500" /> 60-second assessment</span>
+                        <span className="flex items-center gap-1"><CheckCircle className="w-3.5 h-3.5 text-red-500" /> Instant reservation</span>
                       </div>
                     </div>
 
                     <button
                       onClick={handleSecureCohort}
-                      className="bg-brand-cyan hover:bg-cyan-400 text-slate-950 font-display font-extrabold text-sm px-8 py-4 rounded-xl transition shadow-lg shadow-brand-cyan/10 flex items-center justify-center gap-2 shrink-0 active:scale-98"
+                      className="bg-red-600 hover:bg-red-500 text-white font-display font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition shadow-lg shadow-red-600/35 flex items-center justify-center gap-2 shrink-0 active:scale-98 cursor-pointer"
                     >
                       Unlock Founding Driver Access <ChevronRight className="w-4 h-4" />
                     </button>
@@ -817,13 +818,13 @@ export default function App() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="bg-white rounded-2xl border border-slate-200/80 p-12 text-center shadow-xs"
+                className="bg-[#111218] rounded-2xl border border-white/10 p-12 text-center shadow-2xl backdrop-blur-md"
               >
-                <div className="w-16 h-16 bg-brand-navy rounded-2xl flex items-center justify-center mx-auto mb-6 text-brand-cyan">
+                <div className="w-16 h-16 bg-red-950 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500">
                   <RefreshCw className="w-8 h-8 animate-spin" />
                 </div>
-                <h3 className="text-xl font-display font-bold text-brand-navy">Finalizing your cohort eligibility classification...</h3>
-                <p className="text-xs text-slate-500 mt-2">Structuring custom safety bulletins and personalized diagnostic follow-ups.</p>
+                <h3 className="text-xl font-display font-bold text-white uppercase tracking-wider">Finalizing your cohort eligibility classification...</h3>
+                <p className="text-xs text-slate-400 mt-2">Structuring custom safety bulletins and personalized diagnostic follow-ups.</p>
               </motion.div>
             )}
 
@@ -836,23 +837,23 @@ export default function App() {
                 className="space-y-8"
               >
                 {/* Cohort reserved confirmation */}
-                <div className="bg-emerald-50 rounded-2xl border border-emerald-200 p-6 md:p-8 text-slate-800 text-center relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-100/30 rounded-full blur-2xl pointer-events-none" />
+                <div className="bg-gradient-to-b from-red-950/40 to-black/80 rounded-2xl border border-red-500/30 p-6 md:p-8 text-white text-center relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-48 h-48 bg-red-600/10 rounded-full blur-2xl pointer-events-none" />
                   
-                  <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white shadow-md">
+                  <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white shadow-lg">
                     <CheckCircle className="w-6 h-6" />
                   </div>
                   
-                  <h3 className="text-2xl font-display font-bold text-emerald-900">Founding Cohort Reserved Successfully!</h3>
-                  <p className="text-xs text-slate-600 max-w-xl mx-auto mt-2">
+                  <h3 className="text-2xl font-display font-black text-red-400 uppercase tracking-wider">Founding Cohort Reserved Successfully!</h3>
+                  <p className="text-xs text-slate-300 max-w-xl mx-auto mt-2">
                     Congratulations <strong>{name}</strong>! Your space in the <strong>{personalLead.cohortName}</strong> is secured for your <strong>{vehicleYear} {vehicleMake}</strong>.
                   </p>
 
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 text-xs font-mono font-bold text-slate-500">
-                    <span className="bg-white border border-slate-200 px-3.5 py-1.5 rounded-lg text-slate-700">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 text-xs font-mono font-bold">
+                    <span className="bg-black/40 border border-white/10 px-3.5 py-1.5 rounded-lg text-slate-200">
                       Readiness Index: {personalLead.readinessScore}/100
                     </span>
-                    <span className="bg-white border border-slate-200 px-3.5 py-1.5 rounded-lg text-emerald-700">
+                    <span className="bg-black/40 border border-white/10 px-3.5 py-1.5 rounded-lg text-red-400">
                       Tier: {personalLead.cohortTier}
                     </span>
                   </div>
@@ -879,7 +880,7 @@ export default function App() {
                       setScanResult(null);
                       setPersonalLead(null);
                     }}
-                    className="text-xs bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold px-5 py-2.5 rounded-lg transition"
+                    className="text-xs bg-white/10 hover:bg-red-600 text-white font-mono uppercase tracking-widest px-5 py-2.5 rounded-lg transition cursor-pointer"
                   >
                     Benchmark Another Vehicle
                   </button>
@@ -908,12 +909,12 @@ export default function App() {
       </main>
 
       {/* Trust-first Footer */}
-      <footer className="bg-slate-900 text-white mt-20 border-t border-slate-800 py-12 px-6">
+      <footer className="bg-black text-white mt-20 border-t border-white/10 py-12 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <Car className="w-5 h-5 text-brand-cyan" />
-              <span className="text-sm font-display font-bold">ASTRATEQ CANADA</span>
+              <Car className="w-5 h-5 text-red-500" />
+              <span className="text-sm font-display font-black uppercase tracking-widest">ASTRATEQ CANADA</span>
             </div>
             <p className="text-xs text-slate-400 max-w-sm">
               Developing next-generation localized hardware-in-the-loop edge diagnostic controllers in Ontario, Canada.
